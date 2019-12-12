@@ -1,5 +1,10 @@
 # MovingObjDetector-WAMI.python
 
+## Use
+python WAMI_detector.py -I WAMI-input\ -O WAMI-output\ -N Models\ -M Customised -NT 5
+
+All the images in WAMI-input will be processed. Starating from image 6 (number_of_template + 1). The first 5 frames (NT) are used to build background.
+
 ## Dependencies
 python 3.7
 
