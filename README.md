@@ -12,6 +12,8 @@ opencv-python==3.4.2.16
 
 opencv-contrib-python==3.4.2.16
 
+Newest opencv doesn't include SIFT/SURF feature tool, so old version is necessary unless building your opencv-python and the contrib by yourself.
+
 tensorflow==1.14.0
 
 ## Reference
