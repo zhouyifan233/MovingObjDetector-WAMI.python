@@ -70,24 +70,24 @@ model = tf.keras.Sequential()
 model.add(tf.keras.layers.Conv2D(32, kernel_size=5, strides=1, padding='valid', input_shape=(4, 45, 45),
                                  data_format='channels_first', kernel_initializer=tf.keras.initializers.RandomNormal(mean=0.0, stddev=0.01, seed=None),
                                  bias_initializer='zeros'))
-model.add(tf.keras.layers.BatchNormalization())
+model.add(tf.keras.layers.BatchNormalization(axis=1))
 model.add(tf.keras.layers.Activation('relu'))
 
 model.add(tf.keras.layers.Conv2D(32, kernel_size=3, strides=1, padding='valid', data_format='channels_first',
                                  kernel_initializer=tf.keras.initializers.RandomNormal(mean=0.0, stddev=0.01, seed=None), bias_initializer='zeros'))
-model.add(tf.keras.layers.BatchNormalization())
+model.add(tf.keras.layers.BatchNormalization(axis=1))
 model.add(tf.keras.layers.Activation('relu'))
 
 model.add(tf.keras.layers.MaxPool2D(pool_size=(2, 2), data_format='channels_first'))
 
 model.add(tf.keras.layers.Conv2D(64, kernel_size=3, strides=1, padding='same', data_format='channels_first',
                                  kernel_initializer=tf.keras.initializers.RandomNormal(mean=0.0, stddev=0.01, seed=None), bias_initializer='zeros'))
-model.add(tf.keras.layers.BatchNormalization())
+model.add(tf.keras.layers.BatchNormalization(axis=1))
 model.add(tf.keras.layers.Activation('relu'))
 
 model.add(tf.keras.layers.Conv2D(64, kernel_size=3, strides=1, padding='same', data_format='channels_first',
                                  kernel_initializer=tf.keras.initializers.RandomNormal(mean=0.0, stddev=0.01, seed=None), bias_initializer='zeros'))
-model.add(tf.keras.layers.BatchNormalization())
+model.add(tf.keras.layers.BatchNormalization(axis=1))
 model.add(tf.keras.layers.Activation('relu'))
 
 model.add(tf.keras.layers.Flatten())

@@ -88,17 +88,17 @@ Y_vali = tf.keras.utils.to_categorical(Y_vali, 2)
 '''Generate Network'''
 model = tf.keras.Sequential()
 model.add(tf.keras.layers.Conv2D(32, kernel_size=3, strides=1, padding='same', input_shape=(4, 21, 21), data_format='channels_first'))
-model.add(tf.keras.layers.BatchNormalization())
+model.add(tf.keras.layers.BatchNormalization(axis=1))
 model.add(tf.keras.layers.Activation('relu'))
 
 model.add(tf.keras.layers.Conv2D(32, kernel_size=3, strides=1, padding='same', data_format='channels_first'))
-model.add(tf.keras.layers.BatchNormalization())
+model.add(tf.keras.layers.BatchNormalization(axis=1))
 model.add(tf.keras.layers.Activation('relu'))
 
 model.add(tf.keras.layers.MaxPool2D(pool_size=(2, 2), data_format='channels_first'))
 
 model.add(tf.keras.layers.Conv2D(64, kernel_size=3, strides=1, padding='same', data_format='channels_first'))
-model.add(tf.keras.layers.BatchNormalization())
+model.add(tf.keras.layers.BatchNormalization(axis=1))
 model.add(tf.keras.layers.Activation('relu'))
 
 model.add(tf.keras.layers.Flatten())
